@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			.error{
+				color: red;
+			}
+			.guide{
+				font-size: 20px;
+				font-family: calibri;
+				text-align: left;
+
+			}
+			.h{
+				font-family: calibri;
+			}
+
+			colorBox{
+				background-color: green;
+				padding: 100px;
+				
+			}
+		</style>
+
+		<script src="code.js"></script>
+	</head>
+	<body onload="load('saveName'); loadColor()" onclick="changeColor()">
+		<h1 class="h"><b>Exercise 1 (JavaScript)</b></h1>	
+		<br><br><br><br>
+		
+		<!-- ---------------------------------------------------question 1-->
+		<h2 class="h">1.Sum</h2>
+		<table >
+		  <tr>
+		    <th class="guide">First Integer</th>
+		    <th></th>
+		    <th class="guide">Second Integer</th>
+		    <th></th>
+		    <th class="guide">Result</th>
+		    <th></th>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="firstNumber"  onkeyup="errorHanddle(isValidNumber('firstNumber')&&isValidNumber('secondNumber'),'error1')"></td>
+		    <td class="guide">+</td>
+		    <td><input type="text" id="secondNumber" onkeyup="errorHanddle(isValidNumber('firstNumber')&&isValidNumber('secondNumber'),'error1')"></td>
+		    <td><button onclick="add()">=</button></td>
+		    <td><input type="text" id="result" readonly></td>
+		    <td><button onclick="clean()">clear</button></td>
+		  </tr>
+		</table>
+		<p id="error1" class="error"></p>
+		<br><br><br><br>
+
+
+		<!-----------------------------------------------------------question 2-->
+		<h2 class="h">2.BMI</h2>
+		<table>
+			<tr>
+				<th class="guide">Height</th>
+				<th class="guide">Weight</th>
+				<th></th>
+				<th class="guide">Result(kg)</th>
+			</tr>
+			<tr>
+				<td><input type="text" id="height" placeholder="cm" onkeyup="errorHanddle(isPositiveValidNumber('height')&&isPositiveValidNumber('weight'),'error2')"></td>
+				<td><input type="text" id="weight" placeholder="kg" onkeyup="errorHanddle(isPositiveValidNumber('height')&&isPositiveValidNumber('weight'),'error2')"></td>
+				<td><button onclick="calculateBMI()">-></button></td>
+				<td><input type="text" id="result2" readonly></td>
+			</tr>
+		</table>
+		<p id="error2" class="error"></p>
+		<p class="guide">Formula </p>
+		<p>BMI = Weight(kg) / Height(m)<sup>2</sup></p>
+		<br><br><br><br>
+
+		<!------------------------------------------------------------question 4-->
+		<h2 class="h">4.Password</h2>
+		<p class="guide"> Password</p>
+		<input type="text" id="pwd" onkeyup="checkValidate()">
+		<p id="char15" class="error"> at least 15 characters required</p>
+		<p id="special3" class="error"> at least 3 different special characters required</p>
+		<p id="charAlpCap" class="error"> at least 4 capital characters required</p>
+		<p id="charAlp" class="error"> at least 4 simple characters required</p>
+		<p id="numbers2" class="error"> at least 2 numbers required</p>
+		<br><br><br><br>
+
+
+
+		<!------------------------------------------------------------question 5-->
+		<h2 class="h">5.Persistent Name</h2>
+		<p class="guide"> Name</p>
+		<input type="text" id="saveName" onkeyup="save('saveName')" >
+		<br><br><br><br>
+
+		<!-------------------------------------------------------question 6-->
+		<h2 class="h">6.Changing Colors</h2>
+		<br><br><br><br><br>
+		<colorBox id="colorBox" value="yellow"></colorBox>
+		<br><br><br><br><br><br><br><br><br><br>
+
+		<!-------------------------------------------------question 7----->
+		<h2 class="h">7.Weather API</h2>
+		<button onclick="report()">get weather report</button>
+		<p>colombo weather report</p>
+		<p id="weather"></p>
+
+
+		
+	</body>
+</html>
